@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bonam Vamsi Sujay – Portfolio</title>
+<title>Ambika Sunkara – Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -109,12 +109,44 @@ section:nth-child(even){background:var(--bg2)}
 
 /* single centered column */
 .hero-wrap{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;width:100%;max-width:660px;
-  margin:0 auto;
+    position:relative;
+    z-index:1;
+
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:5rem;
+}
+.hero-main{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:5rem;
+
 }
 
+.hero-content{
+    flex:1;
+    text-align:left;
+}
+
+.hero-vis{
+    flex:0 0 auto;
+}
 
 /* 1 badge */
 .h-badge{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mint-d);background:rgba(78,200,154,0.08);border:1px solid rgba(78,200,154,0.2);padding:.28rem .9rem;border-radius:20px;margin-bottom:1.3rem}
@@ -126,18 +158,174 @@ section:nth-child(even){background:var(--bg2)}
 .h-name em{font-style:italic;color:var(--blue)}
 
 /* 3 role */
-.h-role{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lav-d);font-weight:500;margin-bottom:1.2rem;width:100%}
+.h-role{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lav-d);font-weight:500;margin-bottom:0.5rem;width:100%}
 
 /* 4 bio */
-.h-bio{font-size:.95rem;color:var(--text2);line-height:1.82;max-width:580px;margin:0 auto 0}
+.h-bio{font-size:.95rem;color:var(--text2);line-height:1.8;max-width:600px;margin-bottom: 25px;margin-top: 0;}
 
 /* 5 photo */
 .hero-vis{display:flex;justify-content:center;align-items:center;margin:2rem auto}
-.h-portrait{width:200px;height:200px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(145deg,#1a2848,#1e1a40,#142838);border:4px solid var(--blue);box-shadow:0 0 0 7px rgba(74,144,232,0.13),0 0 42px rgba(74,144,232,0.32),0 10px 36px rgba(0,0,0,0.55)}
-.h-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:50%}
+.photo-type{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+
+.hero-vis{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.h-portrait{
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+
+    border:5px solid rgba(74,144,232,0.9);
+
+    box-shadow:
+        0 0 0 12px rgba(74,144,232,0.12),
+        0 0 40px rgba(74,144,232,0.35),
+        0 0 90px rgba(74,144,232,0.25),
+        0 15px 50px rgba(0,0,0,0.55);
+}
+
+.h-portrait img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+}
+.h-portrait::before{
+    content:'';
+    position:absolute;
+    inset:-18px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(74,144,232,0.25);
+
+    animation:pulseRing 4s infinite;
+}
+
+@keyframes pulseRing{
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+    50%{
+        transform:scale(1.05);
+        opacity:.5;
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
 .fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--ff-head);font-style:italic;font-size:4.5rem;font-weight:700;color:rgba(255,255,255,0.22)}
 .h-float,.fdot{display:none}
+@media (max-width: 900px){
 
+  .hero-main{
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap:1.5rem;
+  }
+
+  .hero-content{
+      text-align:center;
+      order:2;
+  }
+
+  .hero-vis{
+      order:1;
+      margin-top:0;
+  }
+
+  .h-btns{
+      justify-content:center;
+  }
+
+  .h-stats-bar{
+      margin:auto;
+  }
+.hero-wrap{
+    flex-direction:column-reverse;
+    text-align:center;
+}
+.h-portrait{
+    width:280px;
+    height:280px;
+}
+.hero-actions{
+    margin-top: 50px;   /* Increase to 60px or 70px if needed */
+}
+.hero-header{
+    text-align:center;
+    margin-bottom:1.2rem;
+}
+
+
+
+
+.hero-content{
+    text-align:center;
+}
+
+
+
+
+.h-btns{
+    margin-bottom: 30px;
+}
+
+.hero-main{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:5rem;
+}
+
+.hero-content{
+    flex:1;
+    text-align:left;
+}
+
+.hero-vis{
+    flex:0 0 auto;
+}
+.h-portrait{
+    width:340px;
+    height:340px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    border:5px solid var(--blue);
+
+    box-shadow:
+      0 0 30px rgba(74,144,232,.45),
+      0 0 80px rgba(74,144,232,.25),
+      0 0 130px rgba(74,144,232,.15);
+}
+
+.h-portrait img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+}
+}
 
 
 /* 6 typing */
@@ -320,7 +508,7 @@ footer{position:relative;z-index:1;background:var(--surface);border-top:1px soli
 
 <!-- ══ NAVBAR ══ -->
 <nav id="navbar">
-  <a class="nav-logo" href="#home"><span class="nav-dot"></span>Sujay Bonam</a>
+  <a class="nav-logo" href="#home"><span class="nav-dot"></span>Ambika Sunkara</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -346,61 +534,123 @@ footer{position:relative;z-index:1;background:var(--surface);border-top:1px soli
   <div class="h-ring hr3"></div>
   <div class="h-orb"></div>
 
-  <div class="hero-content">
+  <!-- Top Center Content -->
+  <div class="hero-header">
 
-    <!-- 1 · Open to Opportunities -->
-    <div class="h-badge">Open to Opportunities</div>
+    <div class="h-badge">
+      Open to Opportunities
+    </div>
 
-    <!-- 2 · Name -->
-    <h1 class="h-name">Bonam Vamsi <em>Sujay</em></h1>
+    <h1 class="h-name">
+      Ambika Naga Srivalli
+      <br>
+      <em>Sunkara</em>
+    </h1>
 
-    <!-- 3 · Role -->
-    <p class="h-role">CSE &nbsp;·&nbsp; Artificial Intelligence &amp; Machine Learning</p>
+    <p class="h-role">
+      CSE · Artificial Intelligence & Data Science
+    </p>
 
-    <!-- 4 · Bio -->
-    <p class="h-bio"><p class="h-bio">
-I am an enthusiastic undergraduate student specializing in Artificial Intelligence and Machine Learning with a strong passion for Machine Learning, Intelligent Systems, and Data-Driven Innovation. I enjoy exploring how AI can solve real-world challenges through automation, predictive analytics, and smart decision-making systems. My goal is to build impactful technology that creates meaningful value for society.
-</p></p>
+  </div>
 
-    <!-- 5 · Profile photo (circular, centered) -->
+  <!-- Bottom Split Layout -->
+  <div class="hero-main">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-content">
+
+      <p class="h-bio">
+        I am an enthusiastic undergraduate student specializing in
+        <strong>Artificial Intelligence and Data Science</strong>
+        with a strong passion for
+        <strong>Machine Learning, Intelligent Systems, and Data-Driven Innovation.</strong>
+
+        I enjoy exploring how AI can solve real-world challenges through
+        automation, predictive analytics, and smart decision-making systems.
+
+        My goal is to build impactful technology that creates meaningful value
+        for society while continuously expanding my expertise in emerging
+        technologies and innovative software solutions.
+      </p>
+
+      <!-- Typing Animation -->
+      
+
+      <!-- Buttons -->
+      <div class="h-btns">
+
+        <a href="#projects" class="btn btn-blue">
+          <i class="fas fa-folder-open"></i>
+          View Projects
+        </a>
+
+        <a href="#contact" class="btn btn-out-blue">
+          <i class="fas fa-paper-plane"></i>
+          Contact Me
+        </a>
+
+        <a
+          href="https://drive.google.com/file/d/1d3U6hj1-BOcZAem-aCME12PPvEl2byq3/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-out-lav"
+        >
+          <i class="fas fa-download"></i>
+          Resume
+        </a>
+
+      </div>
+
+      <!-- Stats -->
+      <div class="h-stats-bar">
+
+        <div class="hsb-item">
+          <div class="hsb-num">5+</div>
+          <div class="hsb-lbl">Projects</div>
+        </div>
+
+        <div class="hsb-item">
+          <div class="hsb-num">2</div>
+          <div class="hsb-lbl">Internships</div>
+        </div>
+
+        <div class="hsb-item">
+          <div class="hsb-num">7+</div>
+          <div class="hsb-lbl">Technologies</div>
+        </div>
+
+        <div class="hsb-item">
+          <div class="hsb-num">AI</div>
+          <div class="hsb-lbl">Specialization</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE PHOTO -->
     <div class="hero-vis">
+
       <div class="h-portrait">
+
         <img
-  src="profile.jpeg" alt="Sujay's Photo"
-  onerror="this.style.display='none';this.parentNode.querySelector('.fallback').style.display='flex';"
-/>
+          src="Pr.jpeg 3.jpeg"
+          alt="Srivalli's Photo"
+          onerror="this.style.display='none';this.parentNode.querySelector('.fallback').style.display='flex';"
+        />
+
         <span class="fallback">S</span>
+
+      </div>
+<div class="h-type">
+        <span class="arrow">›</span>
+        <span id="typed"></span>
       </div>
     </div>
 
-    <!-- 6 · Typing animation -->
-    <div class="h-type">
-      <span class="arrow">›</span>
-      <span id="typed"></span>
-    </div>
-
-    <!-- 7 · CTA buttons -->
-    <div class="h-btns">
-      <a href="#projects" class="btn btn-blue"><i class="fas fa-folder-open"></i> View Projects</a>
-      <a href="#contact" class="btn btn-out-blue"><i class="fas fa-paper-plane"></i> Contact Me</a>
-      <!-- Replace YOUR_RESUME_FILE_ID with your Google Drive PDF file ID -->
-      <a href="https://drive.google.com/file/d/1MAc3iqLqzzGu36JsvQm3VQ-SYxOUtI5M/view" target="_blank" rel="noopener noreferrer"
-         download="Srivalli_Resume.pdf" class="btn btn-out-lav">
-        <i class="fas fa-download"></i> Resume
-      </a>
-    </div>
-
-    <!-- 8 · Stats bar -->
-    <div class="h-stats-bar">
-      <div class="hsb-item"><div class="hsb-num">5+</div><div class="hsb-lbl">Projects</div></div>
-      <div class="hsb-item"><div class="hsb-num">2</div><div class="hsb-lbl">Internships</div></div>
-      <div class="hsb-item"><div class="hsb-num">7+</div><div class="hsb-lbl">Technologies</div></div>
-      <div class="hsb-item"><div class="hsb-num">AI</div><div class="hsb-lbl">Specialization</div></div>
-    </div>
-
   </div>
-</section>
 
+</section>
 <!-- ══════════════════════════════════
      ABOUT
 ══════════════════════════════════ -->
@@ -419,7 +669,7 @@ My primary focus areas include <strong>Artificial Intelligence</strong>, <strong
 </p>
 
 <p>
-I actively explore modern technologies through projects, internships, and self-learning. While I have experience working with <strong> Cyber Security</strong>, my major interests lie in building AI-powered applications, predictive systems, and smart software solutions that create real-world impact.
+I actively explore modern technologies through projects, internships, and self-learning. While I have experience working with <strong>Blockchain Technology</strong>, my major interests lie in building AI-powered applications, predictive systems, and smart software solutions that create real-world impact.
 </p>
       <div class="chips">
         <span class="chip cs">Artificial Intelligence</span>
@@ -682,7 +932,7 @@ I actively explore modern technologies through projects, internships, and self-l
   <div class="f-tag">Aspiring AI &amp; Blockchain Developer · Building Technology for the Future</div>
   <div class="f-soc">
     <a href="https://github.com/ambikasunkara" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/ambikasunkara" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.linkedin.com/in/ambikasunkara/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     <a href="mailto:ambikasunkara08@email.com"><i class="fas fa-envelope"></i></a>
   </div>
   <div class="f-copy">© 2026 Sunkara Ambika Naga Srivalli · All rights reserved</div>
